@@ -5,7 +5,7 @@ pipeline {
     agent any
     stages {
         stage('build and push') {
-            steps { sh "docker build -t aymenchab/testing:tester ."
+            steps { sh "docker build --privileged -t aymenchab/testing:tester ."
                     withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
                     sh("docker push aymenchab/testing:tester")
                 }
