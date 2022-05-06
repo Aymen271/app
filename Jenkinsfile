@@ -16,6 +16,7 @@ pipeline {
                     sh("docker push aymenchab/testing:tester")
                 }
             }
+            }
        stage ('make pod') {
            steps { sh("kubectl create -f pod.yml --namespace=test")
            }
@@ -25,4 +26,4 @@ pipeline {
         }
     }
 }
-}
+
