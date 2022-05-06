@@ -7,11 +7,7 @@ pipeline {
     }
     stages {
         stage('build and push') {
-            when {
-                branch 'master'
-            }
             sh "docker build -t aymenchab/testing:tester ."
-
             steps { withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
                     sh("docker push aymenchab/testing:tester")
                 }
@@ -26,4 +22,3 @@ pipeline {
         }
     }
 }
-
