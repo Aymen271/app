@@ -7,8 +7,8 @@ pipeline {
     }
     stages {
         stage('build and push') {
-            sh "docker build -t aymenchab/testing:tester ."
-            steps { withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
+            steps { sh "docker build -t aymenchab/testing:tester ."
+                    withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
                     sh("docker push aymenchab/testing:tester")
                 }
             }
@@ -20,5 +20,6 @@ pipeline {
       stage ('create service') {
           steps { sh("kubectl create -f service.yml --namespace=test")
         }
-    }
+        }
+         }
 }
