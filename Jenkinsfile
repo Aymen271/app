@@ -4,6 +4,10 @@ pipeline {
     }
     agent any
     stages {
+        stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
         stage('build and push') {
             steps { sh "docker build -t aymenchab/testing:tester ."
                     withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
