@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Initialize'){
             steps{ sh"def dockerHome = tool 'myDocker'"
-                   sh"env.PATH = "${dockerHome}/bin:${env.PATH}""
+                   sh"env.PATH = ${dockerHome}/bin:${env.PATH}"
                  }
             }
         stage('build and push') {
