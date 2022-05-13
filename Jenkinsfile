@@ -5,7 +5,8 @@ pipeline {
     agent any
     stages {
         stage('build and push') {
-            steps { sh "sudo docker build -t aymenchab/testing:tester ."
+            steps { sh "docker rmi -f aymenchab/testing:tester"
+                    sh"sudo docker build -t aymenchab/testing:tester ."
                     withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
                     sh("sudo docker push aymenchab/testing:tester")
                 }
