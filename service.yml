@@ -8,8 +8,8 @@ spec:
    app: test-app
    env: prod
  ports:
- - name: http
+ - name: test
    protocol: TCP
    port: 3000
    targetPort: 3000
-   nodeport:32222
+   nodePort: 32222
