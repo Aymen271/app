@@ -18,7 +18,7 @@ pipeline {
            }
            }
       stage ('create service') {
-          steps { sh("sudo kubectl delete service test-service -n test")
+          steps { sh("sudo kubectl delete service test-product -n test")
                   sh("sudo kubectl create -f service.yml --namespace=test")
         }
         }
