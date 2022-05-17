@@ -3,11 +3,11 @@ kind: Pod
 metadata:
    name: test-pod
    labels:
-     environment: production
-     app: tester
+     environment: prod
+     app: test-app
 spec:
    containers:
    - name: test-pod
      image: aymenchab/testing:tester
      ports:
-     - containerPort: 3333
+     - containerPort: 3000

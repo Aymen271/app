@@ -3,6 +3,7 @@ kind: Deployment
 metadata: 
  name: test-deployment 
 spec: 
+ replicas: 2
  strategy: 
   type: RollingUpdate 
  selector: 
