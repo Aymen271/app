@@ -5,8 +5,8 @@ metadata:
 spec:
  type: NodePort
  selector:
-   app: tester
-   env: production
+   app: test-app
+   env: prod
  ports:
  - nodePort: 32222
    protocol: TCP
