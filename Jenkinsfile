@@ -5,7 +5,7 @@ pipeline {
     agent any
     stages {
         stage('build and push') {
-            steps { sh "sudo docker rmi -f aymenchab/testing:tester"
+            steps { 
                     sh"sudo docker build -t aymenchab/testing:tester ."
                     withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
                     sh("sudo docker push aymenchab/testing:tester")
@@ -13,12 +13,12 @@ pipeline {
             }
             }
        stage ('make pod') {
-           steps { sh("sudo kubectl delete deployment test-deployment -n test") 
+           steps {  
                    sh("sudo kubectl create -f deployment.yml --namespace=test")
            }
            }
       stage ('create service') {
-          steps { sh("sudo kubectl delete service test-product -n test")
+          steps { 
                   sh("sudo kubectl create -f service.yml --namespace=test")
         }
         }
