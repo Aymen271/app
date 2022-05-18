@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('build and push') {
             steps { 
-                    sh"sudo docker build -t aymenchab/testing:t ."
+                    sh"sudo docker build -t aymenchab/testing:tester ."
                     withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
-                    sh("sudo docker push aymenchab/testing:t")
+                    sh("sudo docker push aymenchab/testing:tester")
                 }
             }
             }
