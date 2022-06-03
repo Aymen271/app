@@ -17,4 +17,4 @@ spec:
    spec: 
     containers: 
     - name: test-container 
-      image: aymenchab/testing:v1.0
+      image: aymenchab/testing:v1.1
