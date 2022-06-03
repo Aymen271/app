@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('build and push') {
             steps { 
-                    sh"sudo docker build -t aymenchab/images:v1.1 ."
                     sh"sudo docker logout"
+                    sh"sudo docker build -t aymenchab/images:v1.1 ."                  
                     withDockerRegistry([url: "", credentialsId: "dockerhub-id"]) {
                     sh("sudo docker push aymenchab/images:v1.1")
                 }
