@@ -15,12 +15,12 @@ pipeline {
             }
        stage ('make pod') {
            steps {  
-                   sh("kubectl create -f deployment.yml --namespace=test")
+                   sh("sudo kubectl create -f deployment.yml --namespace=test")
            }
            }
            stage ('make service') {
            steps {  
-                   sh("kubectl create -f service.yml --namespace=test")
+                   sh("sudo kubectl create -f service.yml --namespace=test")
            }
            }
          }
