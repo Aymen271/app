@@ -8,6 +8,7 @@ pipeline {
             steps{
                 sonar-scanner.bat -D"sonar.projectKey=PFE" -D"sonar.sources=." -D"sonar.host.url=http://172.29.4.125:9000" -D"sonar.login=df72de26ae67705f00562aadbfa1d05503c5e1ca"
                   }
+        }
         stage('build and push') {
             steps { 
                     sh"sudo docker logout"
