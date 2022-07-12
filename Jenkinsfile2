@@ -8,7 +8,6 @@ pipeline {
             steps {
                    sonar-scanner \
                    -Dsonar.projectKey=PFE \
-                   -Dsonar.sources=. \
                    -Dsonar.host.url=http://172.29.4.125:9000 \
                    -Dsonar.login=df72de26ae67705f00562aadbfa1d05503c5e1ca 
             }
