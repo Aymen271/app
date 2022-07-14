@@ -92,7 +92,7 @@ function AddItemForm({ onNewItem }) {
     return (
 
         <Form onSubmit={submitNewItem}>
-                    <h1>Application</h1>
+                    <h1>Application yes</h1>
 
             <InputGroup className="mb-3">
                 <Form.Control
@@ -109,7 +109,7 @@ function AddItemForm({ onNewItem }) {
                         disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
                     >
-                        {submitting ? 'Adding...' : 'Add '}
+                        {submitting ? 'Adding...' : 'Add Item'}
                     </Button>
                 </InputGroup.Append>
             </InputGroup>
