@@ -169,7 +169,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         size="sm"
                         variant="link"
                         onClick={removeItem}
-                        aria-label="Remove Item"
+                        aria-label="Delete Item"
                     >
                         <i className="fa fa-trash text-danger" />
                     </Button>
