@@ -8,7 +8,7 @@ pipeline {
         stage('build and push') {
             steps { 
                     sh "sudo docker logout"
-                    sh"HUB_TOKEN=$(curl -s -H 'Content-Type: application/json' -X POST -d '{\'username\': \'aymenchab\', \'password\': \'codl271***\'}' https://hub.docker.com/v2/users/login/ | jq -r .token)"
+                sh"HUB_TOKEN=${(curl -s -H 'Content-Type: application/json' -X POST -d '{\'username\': \'aymenchab\', \'password\': \'codl271***\'}'} https://hub.docker.com/v2/users/login/ | jq -r .token)"
                     sh "sudo curl -i -X DELETE   -H 'Accept: application/json'  -H 'Authorization: JWT $HUB_TOKEN'  https://hub.docker.com/v2/repositories/aymenchab/images/tags/1.3/"
                     sh"sudo docker rmi aymenchab/images:1.3"
                     sh"sudo docker build -t aymenchab/images:1.3 ."                  
