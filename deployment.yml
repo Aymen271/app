@@ -17,4 +17,4 @@ spec:
    spec: 
     containers: 
     - name: test-container 
-      image: aymenchab/images:latest
+      image: aymenchab/images:1.3
