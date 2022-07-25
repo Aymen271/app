@@ -1,0 +1,15 @@
+
+pipeline {
+    options {
+        timeout(time: 1, unit: 'HOURS')
+    }
+    agent any
+    stages {
+        stage('Nexus'){
+            steps{
+                sh "twine upload --repository http://172.29.4.125:32500/repository/maven-snapshots/ --username admin --password Cisco123* boto3-1.9.76-py2.py3-none-any.whl"
+               }
+            }
+
+}
+}
