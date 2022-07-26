@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Nexus'){
             steps{
-                sh "twine upload --repository http://172.29.4.125:32500/repository/maven-snapshots/ --username admin --password Cisco123* app"
+                sh "twine upload --repository http://172.29.4.125:32500/repository/maven-snapshots/ --username admin --password Cisco123* Jenkinsfile"
                }
             }
 
