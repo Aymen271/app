@@ -14,12 +14,12 @@ pipeline {
             }
             }
        stage ('make pod') {
-           steps {  sh"sudo kubectl apply deployment test-deployment --namespace=test" 
+           steps {  sh"sudo kubectl apply -f deployment test-deployment --namespace=test" 
                    
            }
            }
            stage ('make service') {
-           steps {  sh"sudo kubectl apply service test-product --namespace=test"
+           steps {  sh"sudo kubectl apply -f service test-product --namespace=test"
            }
            }
          }
