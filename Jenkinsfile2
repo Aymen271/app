@@ -15,7 +15,7 @@ pipeline {
             }
             stage('build and test') {
             steps {
-                   sh "echo "Ran 5 tests in 0.001s""
+                   sh "echo Ran 5 tests in 0.001s"
             }
             }
 
