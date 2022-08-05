@@ -4,13 +4,19 @@ pipeline {
     }
     agent any
     stages {
-        stage('build and push') {
+        stage('Control code quality') {
             steps {
                    sh "sudo /opt/sonar-scanner/bin/sonar-scanner \
                    -Dsonar.projectKey=PFE \
                    -Dsonar-sources=. \
                    -Dsonar.host.url=http://172.29.4.125:9000 \
                    -Dsonar.login=df72de26ae67705f00562aadbfa1d05503c5e1ca" 
+            }
+            }
+            stage('build and test') {
+            steps {
+                   sh "pip install -r requirements.txt"
+                   sh "python unit-test.py"
             }
             }
 
